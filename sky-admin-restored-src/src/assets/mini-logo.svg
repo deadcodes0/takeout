@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- 背景圆角矩形 -->
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#2b6ef0"/>
+  
+  <!-- 图标部分 - 管理图标 -->
+  <rect x="6" y="8" width="20" height="16" rx="2" fill="#fff"/>
+  <rect x="10" y="12" width="12" height="2" rx="1" fill="#2b6ef0"/>
+  <rect x="10" y="16" width="8" height="2" rx="1" fill="#2b6ef0"/>
+  <rect x="10" y="20" width="10" height="2" rx="1" fill="#2b6ef0"/>
+</svg>

@@ -1,0 +1,980 @@
+/* ===== 菜品表单样式 - 按照 task.md 设计 ===== */
+
+/* ===== 表单容器 ===== */
+.addBrand-container {
+  padding: 30px;
+  background: #f4f6fa;
+  min-height: calc(100vh - 60px);
+}
+
+.addBrand-container .container {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 20, 50, 0.06);
+  padding: 32px 40px 28px;
+}
+
+/* ===== 表单标题 ===== */
+.addBrand-container .container .form-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0b1a33;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.addBrand-container .container .form-title i {
+  color: #4f7cff;
+}
+
+/* ===== 表单项样式 ===== */
+.addBrand-container .el-form-item {
+  margin-bottom: 24px;
+}
+
+/* 必填星号颜色 */
+.addBrand-container .el-form-item.is-required .el-form-item__label::before {
+  color: #ef4444;
+}
+
+/* 标签样式 */
+.addBrand-container .el-form-item__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  padding-right: 12px;
+}
+
+/* 输入框样式 */
+.addBrand-container .el-input__inner {
+  border: 1px solid #dce2ec;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: #ffffff;
+  transition: all 0.2s;
+}
+
+.addBrand-container .el-input__inner:focus {
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 2px rgba(79, 124, 255, 0.08);
+}
+
+.addBrand-container .el-input__inner:hover {
+  border-color: #c7d9ff;
+}
+
+/* 下拉选择框 */
+.addBrand-container .el-select .el-input__inner {
+  border-radius: 8px;
+}
+
+.addBrand-container .el-select-dropdown {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.addBrand-container .el-select-dropdown__item {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #475569;
+  transition: background 0.2s;
+}
+
+.addBrand-container .el-select-dropdown__item:hover {
+  background: #f8fafc;
+}
+
+.addBrand-container .el-select-dropdown__item.selected {
+  background: #f0f5ff;
+  color: #4f7cff;
+  font-weight: 500;
+}
+
+/* 数字输入框 */
+.addBrand-container .el-input-number {
+  width: 200px;
+}
+
+.addBrand-container .el-input-number .el-input__inner {
+  border-radius: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ===== 口味标签组 ===== */
+.flavorBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flavorBox .addBut {
+  background: transparent;
+  padding: 1px 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: #4f7cff;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px dashed #c7d9ff;
+  line-height: 1.6;
+}
+
+.flavorBox .addBut:hover {
+  background: #f0f5ff;
+  border-color: #4f7cff;
+}
+
+.flavorBox .addBut i {
+  font-size: 11px;
+}
+
+/* 口味列表区域 */
+.flavorBox .flavor {
+  width: 100%;
+  background: #f8fafc;
+  border-radius: 4px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.flavorBox .flavor .title {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.flavorBox .flavor .cont {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flavorBox .flavor .items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.flavorBox .flavor .itTit {
+  min-width: 120px;
+}
+
+/* 口味标签 */
+.flavorBox .flavor .labItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.flavorBox .flavor .labItems span {
+  background: #e6edf8;
+  padding: 0 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: #3b5e9e;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.flavorBox .flavor .labItems span i {
+  cursor: pointer;
+  font-size: 11px;
+  color: #94a3b8;
+  transition: color 0.2s;
+  font-style: normal;
+}
+
+.flavorBox .flavor .labItems span i:hover {
+  color: #ef4444;
+}
+
+/* 删除口味按钮 */
+.flavorBox .flavor .delFlavor {
+  color: #94a3b8;
+  font-size: 11px;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-left: auto;
+  padding: 0 6px;
+  border-radius: 30px;
+}
+
+.flavorBox .flavor .delFlavor:hover {
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+/* 口味输入框 */
+.flavorBox .flavor .inputBox {
+  min-width: 80px;
+}
+
+.flavorBox .flavor .inputBox input {
+  border: 1px solid #dce2ec;
+  border-radius: 30px;
+  padding: 2px 10px;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  height: 22px;
+}
+
+.flavorBox .flavor .inputBox input:focus {
+  border-color: #4f7cff;
+}
+
+/* ===== 图片上传区域 ===== */
+.addBrand-container .upload-item {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.addBrand-container .avatar-uploader {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eef2f7;
+  background: #fafcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addBrand-container .avatar-uploader .el-upload {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eef2f7;
+  background: #fafcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addBrand-container .avatar-uploader .el-upload:hover {
+  border-color: #4f7cff;
+  background: #f0f5ff;
+}
+
+.addBrand-container .avatar-uploader .avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 上传操作按钮 */
+.addBrand-container .avatar-uploader .el-upload-list__item-actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.addBrand-container .avatar-uploader .el-upload:hover .el-upload-list__item-actions {
+  opacity: 1;
+}
+
+.addBrand-container .avatar-uploader .el-upload-span {
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.addBrand-container .avatar-uploader .el-upload-span:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 上传提示 */
+.addBrand-container .upload-tips {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.addBrand-container .upload-tips strong {
+  color: #64748b;
+}
+
+/* ===== 文本域 ===== */
+.addBrand-container .el-textarea__inner {
+  border: 1px solid #dce2ec;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  background: #ffffff;
+  transition: all 0.2s;
+  resize: none;
+}
+
+.addBrand-container .el-textarea__inner:focus {
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 2px rgba(79, 124, 255, 0.08);
+}
+
+.addBrand-container .el-textarea__inner:hover {
+  border-color: #c7d9ff;
+}
+
+/* ===== 底部按钮 ===== */
+.addBrand-container .subBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #f1f4f9;
+  margin-top: 8px;
+}
+
+.addBrand-container .subBox .el-button {
+  padding: 10px 32px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.addBrand-container .subBox .el-button--default {
+  background: #ffffff;
+  border: 1px solid #d1d9e6;
+  color: #64748b;
+}
+
+.addBrand-container .subBox .el-button--default:hover {
+  background: #f1f4f9;
+  border-color: #d1d9e6;
+}
+
+.addBrand-container .subBox .el-button--primary {
+  background: #4f7cff;
+  border-color: #4f7cff;
+  color: #ffffff;
+}
+
+.addBrand-container .subBox .el-button--primary:hover {
+  background: #3a66e6;
+  border-color: #3a66e6;
+  box-shadow: 0 4px 14px rgba(79, 124, 255, 0.25);
+}
+
+.addBrand-container .subBox .el-button.continue {
+  background: #4f7cff;
+  border-color: #4f7cff;
+}
+
+.addBrand-container .subBox .el-button.continue:hover {
+  background: #3a66e6;
+  border-color: #3a66e6;
+  box-shadow: 0 4px 14px rgba(79, 124, 255, 0.25);
+}
+
+/* ===== 表单验证提示 ===== */
+.addBrand-container .el-form-item__error {
+  font-size: 12px;
+  color: #ef4444;
+  padding-top: 4px;
+}
+
+/* ===== 成功状态 ===== */
+.addBrand-container .el-form-item.is-success .el-input__inner {
+  border-color: #22c55e;
+}
+
+/* 隐藏所有表单项验证通过后的对勾 - 多种方式确保生效 */
+/* 方式1：隐藏label后的对勾 */
+.el-form-item.is-success .el-form-item__label::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 方式2：隐藏输入框内的验证图标 */
+.el-form-item.is-success .el-input__validateIcon {
+  display: none !important;
+}
+
+/* 方式3：隐藏圆形对勾图标 */
+.el-form-item.is-success .el-icon-circle-check {
+  display: none !important;
+}
+
+/* 方式4：隐藏整个suffix区域中的验证图标 */
+.el-form-item.is-success .el-input__suffix .el-input__validateIcon {
+  display: none !important;
+}
+
+/* 方式5：全局隐藏验证成功图标 */
+.el-input__icon.el-input__validateIcon {
+  display: none !important;
+}
+
+/* 方式6：隐藏success状态下的所有图标 */
+.el-form-item__content .is-success .el-input__suffix-inner i {
+  display: none !important;
+}
+
+/* ===== 消息提示框 ===== */
+.el-message-box {
+  width: 340px !important;
+  border-radius: 8px !important;
+}
+
+.el-message-box__input input {
+  font-size: 13px;
+}
+
+.el-message-box__btns .el-button {
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 6px;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 640px) {
+  .addBrand-container {
+    padding: 20px 16px;
+  }
+
+  .addBrand-container .container {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .addBrand-container .el-form--inline .el-form-item {
+    display: block;
+    margin-right: 0;
+  }
+
+  .addBrand-container .upload-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .addBrand-container .subBox {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .addBrand-container .subBox .el-button {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .flavorBox .flavor .items {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== 套餐菜品选择区域 ===== */
+.addDish {
+  width: 100%;
+}
+
+/* ===== 更加小巧精致的添加按钮 ===== */
+.addDish .addBut {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  color: #4f7cff;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 1px 10px;
+  border: 1px dashed #c7d9ff;
+  border-radius: 30px;
+  transition: all 0.2s;
+  background: transparent;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.addDish .addBut:hover {
+  background: #f0f5ff;
+  border-color: #4f7cff;
+}
+
+.addDish .addBut i {
+  font-size: 11px;
+}
+
+/* 套餐菜品表格 */
+.addDish .content {
+  width: 100%;
+}
+
+/* ===== 灰白表格 + 紧凑 + 方正边角 ===== */
+.addDish .table {
+  border-radius: 4px;
+  background: #f8fafc;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  padding: 0;
+}
+
+.addDish .table .el-table {
+  border: none !important;
+  background-color: #f8fafc !important;
+}
+
+.addDish .table .el-table::before {
+  display: none;
+}
+
+/* 表头极致紧凑 */
+.addDish .table .el-table th.el-table__cell {
+  background-color: #eef2f7 !important;
+  border-bottom: 1px solid #dce2ec !important;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 11px !important;
+  letter-spacing: 0.2px;
+  padding: 4px 0 !important;
+}
+
+/* 单元格紧凑 */
+.addDish .table .el-table td.el-table__cell {
+  border-bottom: 1px solid #e9edf4 !important;
+  padding: 5px 0 !important;
+  background-color: #f8fafc !important;
+}
+
+.addDish .table .el-table .el-table__row:last-child td {
+  border-bottom: none !important;
+}
+
+.addDish .table .el-table tbody tr:hover > td {
+  background-color: #f1f5f9 !important;
+}
+
+.addDish .table .el-table .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #1e293b;
+  padding: 0 4px;
+}
+
+/* 菜品名称样式 */
+.addDish .table .dish-name-cell {
+  font-weight: 500;
+  color: #0b1a33;
+  font-size: 12px;
+}
+
+/* 价格标签 */
+.addDish .table .price-tag {
+  background: #e6edf8;
+  color: #3b5e9e;
+  padding: 0 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 12px;
+  display: inline-block;
+  line-height: 22px;
+}
+
+/* ===== 份数输入框：极简，无加减按钮 ===== */
+.addDish .table .el-input-number--small {
+  width: 60px;
+}
+
+.addDish .table .el-input-number .el-input__inner {
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 30px;
+  border-color: #dce2ec;
+  background: #ffffff;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 2px;
+  box-shadow: none;
+}
+
+.addDish .table .el-input-number .el-input__inner:focus {
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 2px rgba(79, 124, 255, 0.08);
+}
+
+/* 隐藏加减按钮 */
+.addDish .table .el-input-number .el-input-number__decrease,
+.addDish .table .el-input-number .el-input-number__increase {
+  display: none !important;
+}
+
+/* 调整输入框右侧内边距 */
+.addDish .table .el-input-number .el-input__inner {
+  padding-right: 6px !important;
+}
+
+/* 删除按钮 */
+.addDish .table .delBut {
+  color: #94a3b8 !important;
+  font-size: 11px !important;
+  padding: 0 6px !important;
+  transition: all 0.2s;
+  border-radius: 30px;
+}
+
+.addDish .table .delBut:hover {
+  color: #ef4444 !important;
+  background: #fef2f2;
+  padding: 0 8px !important;
+}
+
+/* 空状态 */
+.addDish .empty-state-table {
+  text-align: center;
+  padding: 20px 0;
+  color: #94a3b8;
+  background: #f8fafc;
+  border-radius: 4px;
+  border: 1px dashed #dce2ec;
+}
+
+.addDish .empty-state-table i {
+  font-size: 24px;
+  color: #cbd5e1;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.addDish .empty-state-table span {
+  font-size: 12px;
+}
+
+/* ===== 添加菜品弹窗 ===== */
+.addDishList .el-dialog {
+  border-radius: 8px !important;
+  max-width: 340px !important;
+  width: 340px !important;
+}
+
+.addDishList .el-dialog__header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.addDishList .el-dialog__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.addDishList .el-dialog__body {
+  padding: 24px;
+}
+
+.addDishList .el-dialog__footer {
+  padding: 16px 24px 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* 弹窗输入框 */
+.addDishList .el-dialog .el-input__inner {
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+/* 搜索框 */
+.addDishList .seachDish .el-input__inner {
+  border-radius: 10px;
+  padding-left: 35px;
+}
+
+.addDishList .seachDish .el-icon-search {
+  color: #4f7cff;
+  cursor: pointer;
+}
+
+/* 弹窗底部按钮 */
+.addDishList .dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.addDishList .dialog-footer .el-button {
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.addDishList .dialog-footer .el-button--primary {
+  background: #4f7cff;
+  border-color: #4f7cff;
+}
+
+.addDishList .dialog-footer .el-button--primary:hover {
+  background: #3a66e6;
+  border-color: #3a66e6;
+}
+
+/* ===== 套餐菜品选择弹窗内部 ===== */
+/* 弹窗内容区域 - 横向布局 */
+.addDishList .el-dialog__body .addDish {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px;
+  min-height: 400px;
+}
+
+/* 左侧菜品列表 */
+.addDish .leftCont {
+  flex: 1;
+  min-width: 50%;
+  padding-right: 20px;
+  border-right: 1px solid #f1f5f9;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.addDish .tabBut {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.addDish .tabBut span {
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #64748b;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addDish .tabBut span:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.addDish .tabBut span.act {
+  background: #4f7cff;
+  color: #ffffff;
+}
+
+/* 菜品列表 */
+.addDish .tabList {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.addDish .tabList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.addDish .tabList::-webkit-scrollbar-thumb {
+  background: #d1d9e6;
+  border-radius: 3px;
+}
+
+.addDish .tabList .table {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.addDish .tabList .items {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.2s;
+}
+
+.addDish .tabList .items:hover {
+  background: #f8fafc;
+}
+
+.addDish .tabList .items .el-checkbox {
+  width: 100%;
+}
+
+.addDish .tabList .items .el-checkbox__label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.addDish .tabList .items .el-checkbox__label .item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+}
+
+.addDish .tabList .items .el-checkbox__label .item span {
+  color: #1e293b;
+}
+
+.addDish .tabList .items .el-checkbox__label .item span:first-child {
+  flex: 3;
+  text-align: left;
+}
+
+.addDish .tabList .items .el-checkbox__label .item span:nth-child(2) {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.addDish .tabList .items .el-checkbox__label .item span:nth-child(3) {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* 右侧已选菜品 */
+.addDish .ritCont {
+  flex: 1;
+  min-width: 40%;
+  padding-left: 20px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.addDish .ritCont .tit {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.addDish .ritCont .items {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.addDish .ritCont .items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.addDish .ritCont .items::-webkit-scrollbar-thumb {
+  background: #d1d9e6;
+  border-radius: 3px;
+}
+
+.addDish .ritCont .items .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+
+.addDish .ritCont .items .item span:first-child {
+  color: #1e293b;
+  flex: 1;
+}
+
+.addDish .ritCont .items .item .price {
+  color: #ef4444;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+.addDish .ritCont .items .item .del {
+  cursor: pointer;
+  padding: 4px;
+}
+
+.addDish .ritCont .items .item .del img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.addDish .ritCont .items .item .del:hover img {
+  opacity: 1;
+}
+
+/* 空状态 */
+.addDish .tabList .borderNone {
+  border: none;
+}
+
+.addDish .tabList .empty-box {
+  padding: 40px 20px;
+}
+
+/* ===== 弹窗宽度调整 ===== */
+.addDishList .el-dialog {
+  width: 800px !important;
+  max-width: 800px !important;
+  min-width: 600px !important;
+}
+
+/* ===== 响应式弹窗 ===== */
+@media (max-width: 900px) {
+  .addDishList .el-dialog {
+    width: 90% !important;
+    max-width: 90% !important;
+  }
+
+  .addDishList .el-dialog__body .addDish {
+    flex-direction: column !important;
+  }
+
+  .addDish .leftCont,
+  .addDish .ritCont {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  .addDish .ritCont {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

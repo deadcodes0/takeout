@@ -1,0 +1,619 @@
+/* ===== 订单管理页面样式 - 按照 task.md 设计 ===== */
+
+/* ===== 订单容器 ===== */
+.dashboard-container {
+  padding: 24px 32px;
+  background: #f0f2f5;
+  min-height: calc(100vh - 60px);
+}
+
+/* ===== 状态标签区域 ===== */
+.tab-change {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 0 4px;
+}
+
+.tab-item {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tab-item:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.tab-item.active {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+}
+
+/* 状态数量徽章 */
+.tab-item .el-badge {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tab-item .el-badge__content {
+  background: #94a3b8;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 11px;
+  padding: 2px 6px;
+  min-width: 18px;
+  height: 18px;
+  line-height: 14px;
+  position: relative;
+  top: 0;
+  right: 0;
+  transform: none;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+.tab-item .el-badge__content.is-fixed {
+  position: relative;
+  top: 0;
+  right: 0;
+  transform: none;
+}
+
+.tab-item.active .el-badge__content {
+  background: #bfdbfe;
+  color: #1e40af;
+}
+
+/* ===== 搜索筛选区域 ===== */
+.container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.hContainer {
+  min-height: 400px;
+}
+
+.tableBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  background: #f8fafc;
+  padding: 20px 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.tableBar label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  letter-spacing: 0.2px;
+  margin-right: 6px;
+}
+
+.tableBar .el-input {
+  width: 180px !important;
+}
+
+.tableBar .el-input__inner {
+  padding: 8px 14px;
+  border: 1px solid #d1d9e6;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #ffffff;
+  transition: 0.2s;
+}
+
+.tableBar .el-input__inner:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.tableBar .el-date-editor {
+  width: 280px !important;
+}
+
+.tableBar .el-date-editor .el-input__inner {
+  border-radius: 10px;
+}
+
+/* 查询按钮 */
+.tableBar .normal-btn.continue {
+  padding: 9px 28px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: auto;
+}
+
+.tableBar .normal-btn.continue:hover {
+  background: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== 表格样式 ===== */
+.tableBox {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tableBox .el-table__header-wrapper th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tableBox .el-table__row {
+  transition: background 0.2s;
+}
+
+.tableBox .el-table__row:hover {
+  background: #f8fafc !important;
+}
+
+/* 操作按钮 */
+.before .blueBug,
+.middle .blueBug {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.before .blueBug:hover,
+.middle .blueBug:hover {
+  color: #2563eb;
+}
+
+.middle .delBut {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.middle .delBut:hover {
+  color: #dc2626;
+}
+
+.after .blueBug.non {
+  color: #64748b;
+}
+
+.after .blueBug.non:hover {
+  color: #475569;
+}
+
+/* ===== 分页样式 ===== */
+.pageList {
+  margin-top: 24px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pageList .el-pagination .btn-prev,
+.pageList .el-pagination .btn-next,
+.pageList .el-pagination .el-pager li {
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-weight: 500;
+  min-width: 32px;
+  height: 32px;
+  line-height: 30px;
+  transition: all 0.2s;
+}
+
+.pageList .el-pagination .btn-prev:hover,
+.pageList .el-pagination .btn-next:hover,
+.pageList .el-pagination .el-pager li:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.pageList .el-pagination .el-pager li.active {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.pageList .el-pagination .el-pagination__sizes .el-input__inner {
+  border-radius: 8px;
+}
+
+/* ===== 空状态展示 - 使用Element UI图标 ===== */
+.empty-box {
+  text-align: center;
+  padding: 60px 20px 50px;
+}
+
+.empty-box .img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-box .empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.empty-box .empty-icon i {
+  font-size: 72px;
+  color: #d1d9e6;
+}
+
+.empty-box .empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.empty-box .empty-desc {
+  font-size: 14px;
+  color: #94a3b8;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== 弹窗样式 ===== */
+.order-dialog .el-dialog {
+  border-radius: 16px;
+}
+
+.order-dialog .el-dialog__header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.order-dialog .el-dialog__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.order-dialog .el-dialog__body {
+  padding: 24px;
+}
+
+.order-dialog .el-dialog__footer {
+  padding: 16px 24px 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* 订单详情弹窗内部样式 */
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.order-num {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.order-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.order-status.status3 {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.order-middle {
+  padding: 20px 0;
+}
+
+.user-info-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.user-info-box > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-info-box label {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.user-info-box span {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.user-remark {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.user-remark div {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.user-remark span {
+  color: #1e293b;
+}
+
+.user-remark.orderCancel {
+  background: #fef2f2;
+}
+
+.user-remark.orderCancel div {
+  color: #ef4444;
+}
+
+/* 菜品信息 */
+.dish-info {
+  margin-top: 20px;
+}
+
+.dish-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.dish-list {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dish-item:last-child {
+  border-bottom: none;
+}
+
+.dish-item-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dish-name {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.dish-num {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.dish-price {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.dish-all-amount {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px solid #cbd5e1;
+}
+
+.dish-all-amount label {
+  color: #64748b;
+}
+
+.dish-all-amount span {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* 费用信息 */
+.order-bottom {
+  margin-top: 20px;
+}
+
+.amount-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.amount-list {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.amount-list > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.amount-name {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.amount-price {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.all-amount .amount-name {
+  font-weight: 600;
+}
+
+.all-amount .amount-price {
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+/* 取消弹窗 */
+.cancelDialog .el-dialog {
+  border-radius: 12px;
+}
+
+.cancelDialog .el-select {
+  width: 100%;
+}
+
+.cancelDialog .el-textarea__inner {
+  border-radius: 8px;
+}
+
+/* ===== 批量删除按钮样式 - 与新建按钮保持一致 ===== */
+.tableLab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.tableLab .batch-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #ef4444;
+  color: #ffffff;
+  border: 1px solid #ef4444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tableLab .batch-delete-btn:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.tableLab .batch-delete-btn:active {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.tableLab .batch-delete-btn.disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+.tableLab .batch-delete-btn.disabled:hover {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.tableLab .batch-delete-btn i {
+  font-size: 14px;
+}
+
+.tableLab .batch-delete-btn .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.tableLab .batch-delete-btn.disabled .count {
+  background: #cbd5e1;
+  color: #64748b;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px 16px;
+  }
+
+  .tableBar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .tableBar .el-input {
+    width: 100% !important;
+  }
+
+  .tableBar .el-date-editor {
+    width: 100% !important;
+  }
+
+  .tab-change {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tab-item {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .tableLab {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+}

@@ -1,0 +1,196 @@
+/* ===== Element UI 选择框对齐修复 - 按照 task.md 设计 ===== */
+
+/* ===== 1. 表格（el-table）中的多选框对齐 ===== */
+
+/* 强制表格单元格内复选框垂直居中 */
+.el-table .cell .el-checkbox {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  line-height: 1 !important;
+}
+
+/* 确保单元格本身也是垂直居中 */
+.el-table td .cell,
+.el-table th .cell {
+  vertical-align: middle !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 表格多选列特殊处理 */
+.el-table .el-table-column--selection .cell {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+/* 修复表格行高不一致导致的偏移 */
+.el-table__row td {
+  vertical-align: middle !important;
+}
+
+/* ===== 2. 复选框（el-checkbox）与文字对齐 ===== */
+
+/* 全局复选框垂直居中 */
+.el-checkbox {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  transform: none !important;
+  line-height: 1 !important;
+}
+
+/* 复选框内部元素对齐 */
+.el-checkbox .el-checkbox__input {
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+}
+
+/* 复选框标签对齐 */
+.el-checkbox .el-checkbox__label {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding-left: 8px !important;
+  line-height: 1.4 !important;
+  font-size: 14px !important;
+}
+
+/* ===== 3. 菜品列表中的复选框特殊处理 ===== */
+
+/* AddDish.vue 中的菜品列表 */
+.addDish .tabList .items {
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
+  padding: 8px 12px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  transition: background 0.2s !important;
+}
+
+.addDish .tabList .items:hover {
+  background: #f8fafc !important;
+}
+
+.addDish .tabList .items .el-checkbox {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.addDish .tabList .items .el-checkbox .el-checkbox__label {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.addDish .tabList .items .el-checkbox .el-checkbox__label .item {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 16px !important;
+}
+
+.addDish .tabList .items .el-checkbox .el-checkbox__label .item span {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* ===== 4. 复选框组对齐 ===== */
+
+.el-checkbox-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+.el-checkbox-group .el-checkbox {
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ===== 5. 防止歪斜（倾斜）问题 ===== */
+
+.el-checkbox,
+.el-table .cell .el-checkbox,
+.el-checkbox__input,
+.el-checkbox__inner {
+  transform: none !important;
+  transform-style: flat !important;
+}
+
+/* ===== 6. 表格内图片对齐 ===== */
+
+.el-table .cell .el-image {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ===== 7. 表格状态标签对齐 ===== */
+
+.el-table .cell .tableColumn-status {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px 12px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+}
+
+/* ===== 8. 表格操作按钮对齐 ===== */
+
+.el-table .cell .el-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+}
+
+/* ===== 9. 全局 Flex 垂直居中修复 ===== */
+
+/* 确保所有包含复选框的容器都垂直居中 */
+[class*="checkbox"],
+[class*="check"] {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* ===== 10. 菜品管理页面表格优化 ===== */
+
+.dashboard-container .tableBox .el-table__row td .cell {
+  min-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 图片列对齐 */
+.dashboard-container .tableBox .el-table__row td:nth-child(3) .cell {
+  justify-content: flex-start !important;
+}
+
+/* 状态列对齐 */
+.dashboard-container .tableBox .el-table__row td:nth-child(6) .cell {
+  justify-content: center !important;
+}
+
+/* 操作列对齐 */
+.dashboard-container .tableBox .el-table__row td:last-child .cell {
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+/* ===== 11. 响应式修复 ===== */
+
+@media (max-width: 768px) {
+  .el-table .cell .el-checkbox {
+    padding: 4px !important;
+  }
+
+  .addDish .tabList .items {
+    height: 36px !important;
+    padding: 6px 8px !important;
+  }
+}

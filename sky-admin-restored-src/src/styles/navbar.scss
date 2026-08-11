@@ -1,0 +1,222 @@
+/* ===== 导航栏样式 - 按照 task.md 设计 ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 24px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* 左侧区域 */
+.statusBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 汉堡菜单图标 */
+.hamburger-container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.hamburger-container:hover {
+  background: #f0f2f5;
+}
+
+.hamburger-container svg {
+  fill: #5a5e66;
+}
+
+/* 营业状态按钮 */
+.businessBtn {
+  background: #1ab394;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  outline: none;
+  letter-spacing: 0.5px;
+}
+
+.businessBtn:hover {
+  background: #179a7a;
+}
+
+.businessBtn.closing {
+  background: #909399;
+}
+
+.businessBtn.closing:hover {
+  background: #7d8085;
+}
+
+/* 右侧操作区 */
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.rightStatus {
+  display: flex;
+  align-items: center;
+}
+
+/* 营业状态设置（文字按钮） */
+.operatingState {
+  color: #409eff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  height: 36px;
+  border-radius: 18px;
+  transition: background 0.2s;
+}
+
+.operatingState:hover {
+  background: #ecf5ff;
+}
+
+.operatingState i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #67c23a;
+  margin-right: 4px;
+}
+
+/* 管理员头像/按钮 */
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar-wrapper .el-button {
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 500;
+}
+
+.avatar-wrapper .el-button .el-icon-arrow-down {
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+.avatar-wrapper .el-button.active {
+  background: #409eff;
+  border-color: #409eff;
+}
+
+/* 用户下拉列表 */
+.userInfo {
+  position: relative;
+}
+
+.userList {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0;
+  padding-top: 8px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.userList p {
+  padding: 12px 20px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: #606266;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s;
+}
+
+.userList p:hover {
+  background: #f5f7fa;
+  color: #409eff;
+}
+
+.userList p i {
+  font-size: 14px;
+}
+
+.amendPwdIcon {
+  border-bottom: 1px solid #ebeef5;
+}
+
+/* 营业状态设置对话框 - 修复文字显示 */
+.el-dialog__wrapper .el-dialog {
+  border-radius: 12px;
+}
+
+/* 遮罩层优化 */
+.v-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.el-dialog__wrapper .el-dialog__body {
+  padding: 20px 30px;
+}
+
+.el-dialog__wrapper .el-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.el-dialog__wrapper .el-radio {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.8;
+  white-space: normal;
+}
+
+.el-dialog__wrapper .el-radio__input {
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.el-dialog__wrapper .el-radio__label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 8px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.el-dialog__wrapper .el-radio__label > span {
+  color: #909399;
+  font-size: 13px;
+  display: block;
+  margin-top: 6px;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: break-word;
+}

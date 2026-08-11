@@ -1,0 +1,21 @@
+// Sidebar — 选中框蓝色风格
+$menuBg: #f9f9f9;
+$menuText: #595959;
+$menuActiveText: #2b6ef0;
+$menuHover: #333;
+$subMenuBg: #f9f9f9;
+$subMenuHover: #f0f0f0;
+$subMenuActiveText: #2b6ef0;
+$sideTheme: light;
+$menuActiveIcon: #2b6ef0;
+
+:export {
+  menuBg: $menuBg;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  subMenuActiveText: $subMenuActiveText;
+  sideTheme: $sideTheme;
+}
